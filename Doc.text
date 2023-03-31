@@ -1,0 +1,89 @@
+ {
+      "name": "test3",
+      "karat": "33",
+      "weight": "33",
+      "price": "33333",
+      "image": "https://png.pngtree.com/png-vector/20210618/ourmid/pngtree-gold-chain-collar-metal-accessories-png-image_3443360.jpg",
+      "id": 46
+    },
+    {
+      "name": "pendant",
+      "karat": "22",
+      "weight": "22",
+      "price": "2222",
+      "image": "https://png.pngtree.com/png-vector/20210618/ourmid/pngtree-gold-chain-collar-metal-accessories-png-image_3443360.jpg",
+      "id": 47
+    }
+    
+    ---------------
+
+     const onChange=(e)=>{
+
+    if (e.target.input.files.length) {
+      const upload_file = e.target.input.files[0];
+      console.log('upload_file', upload_file)
+      const formData = new FormData();
+      formData.append('file', upload_file);
+
+      // const request = axios.post(this.props.cfg_url+'/upload', formData)
+      //     .then(function(response){
+      //         console.log('successfully uploaded', upload_file);
+      //     });
+  } else {
+      console.log('You need to select a file');
+  }
+//     console.log(e.target.files)
+//     setSelectedFile(e.target.files)
+// const {value,name}=e.target;
+
+
+// console.log(value,name)
+// // {name!=="image"?setFormData({...formData,[name]:value}):setFormData({...formData,[name]:file})}
+
+// setFormData({...formData,[name]:value})
+  }
+
+  ---------------
+  ***
+  
+https://www.pluralsight.com/guides/handling-multiple-inputs-with-single-onchange-handler-react
+----------------------
+function handleChange(evt) {
+  const value = evt.target.value;
+  setState({
+    ...state,
+    [evt.target.name]: value
+  });
+}
+
+-----------
+
+function handleChange(evt) {
+  const value =
+    evt.target.type === "checkbox" ? evt.target.checked : evt.target.value;
+  setState({
+    ...state,
+    [evt.target.name]: value
+  });
+}
+
+-----------------
+function handleChange(evt) {
+  const value =
+    evt.target.type === "file" ? e.target.files[0] : evt.target.value;
+  setState({
+    ...state,
+    [evt.target.name]: value
+  });
+}
+
+--------------
+
+function handleChange(e) {
+    const value =
+      e.target.type === "file" ? e.target.files[0] : e.target.value;
+    setState({
+      ...state,
+      [e.target.name]: value
+    });
+  }

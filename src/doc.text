@@ -1,0 +1,9 @@
+install material ui
+
+npm install @mui/material @emotion/react @emotion/styled
+
+npm i @mui/icons-material
+
+npm install -g json-server
+
+son-server --watch db.json --port 5000

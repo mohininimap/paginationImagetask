@@ -1,0 +1,188 @@
+{
+  "product": [
+    {
+      "name": "payalpppp",
+      "karat": "22",
+      "weight": "22",
+      "price": "2222",
+      "image": "",
+      "id": 44
+    },
+    {
+      "name": "chai2",
+      "karat": "12",
+      "weight": "11",
+      "price": "13313",
+      "image": "",
+      "id": 45
+    },
+    {
+      "name": "test67",
+      "karat": "33",
+      "weight": "33",
+      "price": "44",
+      "image": "",
+      "id": 66
+    },
+    {
+      "name": "ttt",
+      "karat": "33",
+      "weight": "12",
+      "price": "12",
+      "image": "./ring.jpg",
+      "id": 67
+    },
+    {
+      "name": "t",
+      "karat": "121",
+      "weight": "12",
+      "price": "12",
+      "image": "",
+      "id": 68
+    },
+    {
+      "name": "eee",
+      "karat": "22",
+      "weight": "22",
+      "price": "22",
+      "image": "./ring copy.jpg",
+      "id": 69
+    },
+    {
+      "name": "ee",
+      "karat": "22",
+      "weight": "22",
+      "price": "22",
+      "image": "./ring.jpg",
+      "id": 71
+    },
+    {
+      "name": "t",
+      "karat": "33",
+      "weight": "33",
+      "price": "33",
+      "image": "./ring.jpg",
+      "id": 72
+    },
+    {
+      "name": "test",
+      "karat": "12",
+      "weight": "12",
+      "price": "12",
+      "image": "./ring.jpg",
+      "id": 73
+    },
+    {
+      "name": "testh",
+      "karat": "1212",
+      "weight": "12",
+      "price": "12",
+      "image": "./ring.jpg",
+      "id": 74
+    },
+    {
+      "name": "tt",
+      "karat": "44",
+      "weight": "22",
+      "price": "22",
+      "image": "./hearing.png",
+      "id": 75
+    },
+    {
+      "name": "y",
+      "karat": "33",
+      "weight": "33",
+      "price": "33",
+      "image": "./hearing.png",
+      "id": 76
+    },
+    {
+      "name": "t",
+      "karat": "22",
+      "weight": "22",
+      "price": "22",
+      "image": "./ring copy.jpg",
+      "id": 77
+    },
+    {
+      "name": "t",
+      "karat": "23",
+      "weight": "12",
+      "price": "12",
+      "image": "./hearing.png",
+      "id": 78
+    },
+    {
+      "name": "rr",
+      "karat": "22",
+      "weight": "22",
+      "price": "22",
+      "image": "./ring copy.jpg",
+      "id": 81
+    },
+    {
+      "name": "rings",
+      "karat": "12",
+      "weight": "12",
+      "price": "12",
+      "image": "./hearing.png",
+      "id": 82
+    },
+    {
+      "name": "tt",
+      "karat": "22",
+      "weight": "22",
+      "price": "22",
+      "image": "./ring copy.jpg",
+      "id": 83
+    },
+    {
+      "name": "f",
+      "karat": "22",
+      "weight": "222",
+      "price": "22",
+      "image": false,
+      "id": 84
+    },
+    {
+      "name": "test",
+      "karat": "22",
+      "weight": "22",
+      "price": "22",
+      "image": "./hearing.png",
+      "id": 85
+    },
+    {
+      "name": "mata",
+      "karat": "22",
+      "weight": "11",
+      "price": "1111",
+      "image": "./ring copy.jpg",
+      "id": 86
+    },
+    {
+      "name": "Rings",
+      "karat": "22",
+      "weight": "11",
+      "price": "11111",
+      "image": "",
+      "id": 87
+    },
+    {
+      "name": "test",
+      "karat": "11",
+      "weight": "11",
+      "price": "11",
+      "image": "./hearing.png",
+      "id": 88
+    },
+    {
+      "name": "nathani",
+      "karat": "12",
+      "weight": "12",
+      "price": "122",
+      "image": "./ring copy.jpg",
+      "id": 89
+    }
+  ]
+}
