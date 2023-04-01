@@ -23,21 +23,18 @@
     object-fit: cover;
     margin-bottom: 1px;
 }
-/* .pagination{
-    padding:10px;
-    margin:15px 0;
+.pagination{
+  
 display:flex;
 justify-content: center;
-background-color: rgb(253, 240, 240);
-} */
+
+}
 .pagination span{
-    padding:12px 20px;
-    border-radius: 50%;
     cursor:pointer;
 }
 
 .pagination__selected{
-    background-color: rgb(220,220,220);
+    background-color: #ececec !important;
 }
 .pagination__disable{
     opacity: 0.2;
@@ -48,15 +45,23 @@ background-color: rgb(253, 240, 240);
 }
 .top-div{
    margin-top: 2% !important;
-   
+   width:99%;
+   display:flex;
+   justify-content: center;
+   align-items: center;
 }
 .addproduct-div{
    
-    padding-right: 3.1% !important;
+    /* padding-right: 3.1% !important; */
 }
-.btn-addproduct{
-    margin-top: 2% !important;
-    margin-right: 2px;
+.addproduct-div :hover {
+background-color: #FFFFFF;
+}
+.btn-addproduct:hover{
+    background-color: #0D6EFD !important;
+color:#fff;
+    /* margin-top: 2% !important;
+    margin-right: 2px; */
 }
 
 .producttable{
@@ -66,7 +71,7 @@ background-color: rgb(253, 240, 240);
     margin-top: 1.2% !important;
 }
 tr{
-    /* height: 60px !important; */
+   
  
 }
 th{
@@ -78,22 +83,33 @@ td{
     padding: 1.5% !important;
 }
 .title-product{
-   /* border:1px solid black; */
+    font-family: 'Sora', sans-serif;
     font-size: 30px;
     text-transform: capitalize;
     letter-spacing: 1.5px;
 }
 .page-item{
-    list-style: none;
+    list-style: none;   
+    text-decoration: none;
+}
+
+.page-link:focus {
+  
+    box-shadow: none !important;
+    border-color: transparent !important;
+}
+.page-link{
+    color:dodgerblue !important;
+    box-shadow: none !important;
+    border-color: transparent !important;
 }
 .pagination ul{
     display: flex;
+    width: 400px;
     flex-direction: row !important;
-    /* border: 1px solid black; */
-    justify-content: center;
+  
+    justify-content: space-evenly;
     align-items: center;
 }
 
-.pagination ul li{
-    margin-left: 2px;
-}
+    

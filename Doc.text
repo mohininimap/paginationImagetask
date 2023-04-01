@@ -87,3 +87,5 @@ function handleChange(e) {
       [e.target.name]: value
     });
   }
+  ---------------------
+  npm i react-html-table-to-excel

@@ -7,17 +7,19 @@ import FormDialogue from "./components/Dialog";
 import Button from "@mui/material/Button";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import ReactHTMLTableToExcel from 'react-html-table-to-excel';
+
 const initialValue = { name: "", karat: "", weight: "", price: "", image: "" };
 function Home() {
   const [tableData, setTableData] = useState(false);
   const [formData, setFormData] = useState(initialValue);
-  const url = `http://localhost:5000/product`;
+  const baseurl=`http://localhost:5000`;
+  const producturl = `${baseurl}/product`;
   const [open, setOpen] = React.useState(false);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage, setProductsPerPage] = useState(6);
-  // const [page, setPage] = useState(1);
-  // const [selectfield, selectSetField] = useState();
+ 
 
   useEffect(() => {
     getUsers();
@@ -25,7 +27,7 @@ function Home() {
 
   const getUsers = () => {
     setLoading(true);
-    fetch(url)
+    fetch(producturl)
       .then((resp) => resp.json())
       .then((resp) => setTableData(resp));
   };
@@ -35,12 +37,12 @@ function Home() {
   const currentProducts =
     tableData && tableData.slice(indexOfFirstProduct, indexOfLastProduct);
 
-  // console.log("shshssh"+currentProducts)
+  
   const handleFormSubmit = () => {
     if (formData.id) {
-      // alert("Product updated successfully")
+    
 
-      fetch(url + `/${formData.id}`, {
+      fetch(producturl + `/${formData.id}`, {
         method: "PUT",
         body: JSON.stringify(formData),
         headers: {
@@ -53,7 +55,7 @@ function Home() {
           getUsers();
         });
     } else {
-      fetch(url, {
+      fetch(producturl, {
         method: "POST",
         body: JSON.stringify(formData),
         headers: {
@@ -84,7 +86,7 @@ function Home() {
       id
     );
     if (confirm) {
-      fetch(url + `/${id}`, { method: "DELETE" })
+      fetch(producturl + `/${id}`, { method: "DELETE" })
         .then((resp) => resp.json())
         .then((resp) => getUsers());
     }
@@ -96,8 +98,7 @@ function Home() {
 
   const removeImage = (image) => {
     console.log("mmmmm" + tableData);
-    // var newdata=tableData.filter((item)=>item.image!==image);
-    // setTableData([...newdata])
+   
     setFormData({
       ...formData,
       image: "",
@@ -157,15 +158,17 @@ function Home() {
 
   return (
     <>
-      <div class="row top-div">
-        <div class="col-lg-7">
-          <p className="title-product text-end ">Products List</p>
+      <div  class="row justify-content-md-end top-div">
+
+        <div class="col-lg-3">
+          <p className="title-product ">Products List</p>
         </div>
 
-        <div class="col-lg-5 addproduct-div text-end">
+        <div  class="col-lg-2 addproduct-div text-end">
           <Button
             size="small"
-            className="btn-addproduct"
+            style={{marginLeft:"25px"}}
+            className="btn-addproduct mb-2"
             onClick={handleClickOpen}
             variant="outlined"
             startIcon={<AddIcon size="small" />}
@@ -173,10 +176,24 @@ function Home() {
             Add Product
           </Button>
         </div>
+
+        <div style={{width:"160px"}} class="col-lg-2 text-end "> 
+        <ReactHTMLTableToExcel
+      
+                    id="test-table-xls-button"
+                    className="download-table-xls-button btn btn-sm btn-outline-primary text-start mb-2"
+                    table="table-to-xls"
+                    filename="tablexls"
+                    sheet="tablexls"
+                    buttonText="Download as XLS"
+          
+                    />
+        </div>
+       
       </div>
 
       <div>
-        <table className="table table-bordered caption-top producttable">
+        <table id="table-to-xls" className="table table-bordered caption-top producttable">
           <thead>
             <tr>
               <th scope="col">
@@ -193,8 +210,7 @@ function Home() {
           </thead>
           <tbody>
             {
-              // currentProducts.map((item) => (
-
+           
               currentProducts &&
                 currentProducts.map((item) => (
                   <tr key={item?.id}>
@@ -219,34 +235,20 @@ function Home() {
                         />
                       </td>
                       <td>
-                        {/* 
-                      <Fab
-                        size="small"
-                        onClick={() =>handleDelete(item.id)}
-                        aria-label="delete"
-                      > */}
+                       
                         <DeleteIcon
                           onClick={() => handleDelete(item.id)}
                           size="small"
                           color="error"
                         />
-                        {/* </Fab> */}
-
-                        {/* <Fab
-                        sx={{ marginLeft: "12px" }}
-                        size="small"
-                        onClick={() =>handleUpdate(item)}
-
-
-                        aria-label="add"
-                      > */}
+                      
                         <EditIcon
                           className="editicon"
                           onClick={() => handleUpdate(item)}
                           size="small"
                           color="primary"
                         />
-                        {/* </Fab> */}
+                       
                       </td>
                     </>
                   </tr>
@@ -264,58 +266,26 @@ function Home() {
           removeImage={removeImage}
         />
 
-        {/* <div>
-        {tableData.length && tableData.length > 0 && (
-          <div className="pagination">
-            <span onClick={() => selectPageHandler(page - 1)}
-            className={page>1?"":"pagination__disable"}
-            >
-            <ArrowBackIosIcon/>
-            </span>
-            {
-              //so its give a new in a array inside this products =>100
-              [...Array(Math.floor(tableData.length / 10))].map((_, i) => {
-                //i start from 0
-                return (
-                  <span
-                    //current index and page is match then
-                    className={page === i + 1 ? "pagination__selected" : ""}
-                    onClick={() => selectPageHandler(i + 1)}
-                    key={i}
-                  >
-                    {i + 1} 
-                  </span>
-                );
-              })
-            }
-
-            <span onClick={() => selectPageHandler(page + 1)}
-            className={page<Math.floor(tableData.length / 10)?"":"pagination__disable"}
-            >
-         <ArrowForwardIosIcon/>
-              </span>
-          </div>
-        )}
-      </div> */}
+       
         <div>
-          <nav className="pagination">
+          <nav className="pagination pagination-sm">
             <ul>
               <span
+             
                 onClick={() => selectPageHandler(currentPage - 1)}
                 className={currentPage > 1 ? "" : "pagination__disable"}
               >
-                <ArrowBackIosIcon size="small" color="action" />
+                <ArrowBackIosIcon fontSize="5px" size="small" color="action" />
               </span>
               {pageNumbers.map((number,i) => (
                 <>
-                  <li key={number} className="page-item">
+                  <li  key={number} className="page-item">
                     <a
+                  
                       onClick={() => paginate(number)}
                       href="!#"
-                      className="page-link"
-              
-                      // className={currentPage === i + 1 ? "pagination__selected" : ""}
-                   
+                      
+                      className={["page-link",currentPage === i + 1 ? "pagination__selected" : ""].join(" ")}
                     >
                       {number}
                     </a>
@@ -330,7 +300,7 @@ function Home() {
                     : "pagination__disable"
                 }
               >
-                <ArrowForwardIosIcon color="action" size="small"/>
+                <ArrowForwardIosIcon fontSize="5px" color="action" size="small"/>
               </span>
             </ul>
           </nav>
