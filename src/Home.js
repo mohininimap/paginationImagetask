@@ -177,7 +177,7 @@ function Home() {
           </Button>
         </div>
 
-        <div style={{width:"160px"}} class="col-lg-2 text-end "> 
+        <div style={{width:"170px"}} class="col-lg-2 text-end "> 
         <ReactHTMLTableToExcel
       
                     id="test-table-xls-button"
@@ -185,7 +185,7 @@ function Home() {
                     table="table-to-xls"
                     filename="tablexls"
                     sheet="tablexls"
-                    buttonText="Download as XLS"
+                    buttonText="DOWNLOAD AS XLS"
           
                     />
         </div>
@@ -196,16 +196,16 @@ function Home() {
         <table id="table-to-xls" className="table table-bordered caption-top producttable">
           <thead>
             <tr>
-              <th scope="col">
+              <th className="head" scope="col">
                 <input type="checkbox" />
               </th>
-              <th scope="col">ID</th>
-              <th scope="col">NAME</th>
-              <th scope="col">KARAT</th>
-              <th scope="col">WEIGHT</th>
-              <th scope="col">PRICE</th>
-              <th scope="col">IMAGE</th>
-              <th scope="col">ACTIONS</th>
+              <th className="head" scope="col">ID</th>
+              <th className="head" scope="col">NAME</th>
+              <th className="head" scope="col">KARAT</th>
+              <th className="head" scope="col">WEIGHT</th>
+              <th className="head" scope="col">PRICE</th>
+              <th className="head" scope="col">IMAGE</th>
+              <th className="head" scope="col">ACTIONS</th>
             </tr>
           </thead>
           <tbody>
@@ -223,7 +223,7 @@ function Home() {
                         />
                       </th>
 
-                      <th scope="row">{item?.id}</th>
+                      <th className="head-id" scope="row">{item?.id}</th>
                       <td>{item?.name}</td>
                       <td>{item?.karat}</td>
                       <td>{item?.weight}</td>
