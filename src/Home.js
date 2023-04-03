@@ -19,11 +19,13 @@ function Home() {
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage, setProductsPerPage] = useState(6);
- 
+ const [edit,setEdit]=useState(false)
+ const [value,setValue]=useState("");
 
   useEffect(() => {
     getUsers();
   }, []);
+  
 
   const getUsers = () => {
     setLoading(true);
@@ -40,8 +42,6 @@ function Home() {
   
   const handleFormSubmit = () => {
     if (formData.id) {
-    
-
       fetch(producturl + `/${formData.id}`, {
         method: "PUT",
         body: JSON.stringify(formData),
@@ -51,9 +51,10 @@ function Home() {
       })
         .then((resp) => resp.json())
         .then((resp) => {
+          alert("product is updated")
           handleClose();
           getUsers();
-        });
+        })
     } else {
       fetch(producturl, {
         method: "POST",
@@ -66,17 +67,14 @@ function Home() {
         .then((resp) => {
           console.log("resp" + JSON.stringify(resp.name.length));
 
-          if (
-            resp.name.length !== 0 ||
-            resp.karat.length !== 0 ||
-            resp.weight.length !== 0 ||
-            resp.price.length !== 0
-          ) {
-            alert("Product added successfully");
-          }
+          
           handleClose();
           getUsers();
-        });
+          alert("Product added successfully");
+          
+        })
+
+       
     }
   };
 
@@ -156,6 +154,7 @@ function Home() {
     setCurrentPage(pageNumber);
   };
 
+
   return (
     <>
       <div  class="row justify-content-md-end top-div">
@@ -165,6 +164,7 @@ function Home() {
         </div>
 
         <div  class="col-lg-2 addproduct-div text-end">
+      
           <Button
             size="small"
             style={{marginLeft:"25px"}}
@@ -196,8 +196,8 @@ function Home() {
         <table id="table-to-xls" className="table table-bordered caption-top producttable">
           <thead>
             <tr>
-              <th className="head" scope="col">
-                <input type="checkbox" />
+              <th className="head1" scope="col-lg-1">
+               Image uploaded?
               </th>
               <th className="head" scope="col">ID</th>
               <th className="head" scope="col">NAME</th>

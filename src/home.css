@@ -119,7 +119,12 @@ td{
     color: #fff !important;
     background-color: black !important;
  }
-
+.head1{
+    color: #fff !important;
+    background-color: black !important; 
+  width:114px;
+  text-align: left;
+}
  .head-id{
     color: #787878 !important;
  }

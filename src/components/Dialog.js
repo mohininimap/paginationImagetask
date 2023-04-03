@@ -40,7 +40,7 @@ console.log(data)
 
             <input id="file1" type="file" name="image" onChange={e => onChange(e)} />
 
-  <input style={{width:"200px",borderColor:"#fff",outline:"none",border:"none"}} type="text" value={image}/>{image ?<span  onClick={()=>removeImage(data.image)}>X</span>:""}
+  <input style={{width:"200px",borderColor:"#fff",outline:"none",border:"none"}} type="text" value={image}/>{image ?<span className="removeimg" onClick={()=>removeImage(data.image)}>X</span>:""}
           </form>
         </DialogContent>
         <DialogActions>

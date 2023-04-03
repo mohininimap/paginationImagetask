@@ -10,3 +10,7 @@
 .priceError{
     color:red;
 }
+
+.removeimg{
+    cursor: pointer;
+}

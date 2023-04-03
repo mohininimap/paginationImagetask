@@ -1,19 +1,19 @@
 {
   "product": [
     {
-      "name": "payalpppp",
+      "name": "payal",
       "karat": "22",
       "weight": "22",
       "price": "2222",
-      "image": "",
+      "image": false,
       "id": 44
     },
     {
-      "name": "chai2",
+      "name": "kamarpatta",
       "karat": "12",
-      "weight": "11",
-      "price": "13313",
-      "image": "",
+      "weight": "300",
+      "price": "500000",
+      "image": "./ring.jpg",
       "id": 45
     },
     {
@@ -33,19 +33,11 @@
       "id": 67
     },
     {
-      "name": "t",
-      "karat": "121",
-      "weight": "12",
-      "price": "12",
-      "image": "",
-      "id": 68
-    },
-    {
-      "name": "eee",
+      "name": "payal2",
       "karat": "22",
       "weight": "22",
       "price": "22",
-      "image": "./ring copy.jpg",
+      "image": false,
       "id": 69
     },
     {
@@ -183,6 +175,54 @@
       "price": "122",
       "image": "./ring copy.jpg",
       "id": 89
+    },
+    {
+      "name": "bangadi",
+      "karat": "23",
+      "weight": "12",
+      "price": "22222",
+      "image": "./hearing.png",
+      "id": 90
+    },
+    {
+      "name": "payal",
+      "karat": "12",
+      "weight": "12",
+      "price": "1222222",
+      "image": "./ring.jpg",
+      "id": 92
+    },
+    {
+      "name": "necklace",
+      "karat": "12",
+      "weight": "12",
+      "price": "22222",
+      "image": "./ring.jpg",
+      "id": 93
+    },
+    {
+      "name": "rning",
+      "karat": "12",
+      "weight": "121",
+      "price": "122222",
+      "image": "./ring.jpg",
+      "id": 94
+    },
+    {
+      "name": "qw",
+      "karat": "22",
+      "weight": "22",
+      "price": "22",
+      "image": "./ring copy.jpg",
+      "id": 95
+    },
+    {
+      "name": "sds",
+      "karat": "22",
+      "weight": "22",
+      "price": "222",
+      "image": "",
+      "id": 96
     }
   ]
 }
